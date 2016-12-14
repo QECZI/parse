@@ -1,0 +1,34 @@
+ 	if ( !GetOuter()->IsPlayer() )
+ 	if ( !GetOuter()->IsPlayer() )
+ 	{
+ 	{
+-		CBasePlayer *pPlayer = UTIL_PlayerByIndex( 1 );
++		CBasePlayer *pPlayer = UTIL_GetNearestPlayer(GetOuter()->GetAbsOrigin());
+ 		if( pPlayer )
+ 		if( pPlayer )
+ 			pPlayer->ModifyOrAppendPlayerCriteria( set );
+ 			pPlayer->ModifyOrAppendPlayerCriteria( set );
+ 	}
+ 	}
+@@ -937,7 +937,7 @@ void CAI_ExpresserHost_NPC_DoModifyOrAppendCriteria( CAI_BaseNPC *pSpeaker, AI_C
+ 		set.AppendCriteria( "weapon", "none" );
+ 		set.AppendCriteria( "weapon", "none" );
+ 	}
+ 	}
+ 
+ 
+-	CBasePlayer *pPlayer = AI_GetSinglePlayer();
++	CBasePlayer *pPlayer = UTIL_GetNearestPlayer(pSpeaker->GetAbsOrigin());
+ 	if ( pPlayer )
+ 	if ( pPlayer )
+ 	{
+ 	{
+ 		Vector distance = pPlayer->GetAbsOrigin() - pSpeaker->GetAbsOrigin();
+ 		Vector distance = pPlayer->GetAbsOrigin() - pSpeaker->GetAbsOrigin();
+@@ -1042,4 +1042,4 @@ void CMultiplayer_Expresser::AllowMultipleScenes()
+ void CMultiplayer_Expresser::DisallowMultipleScenes()
+ void CMultiplayer_Expresser::DisallowMultipleScenes()
+ {
+ {
+ 	m_bAllowMultipleScenes = false;
+ 	m_bAllowMultipleScenes = false;
