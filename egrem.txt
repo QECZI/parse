@@ -1,7 +1,6 @@
  	if ( !GetOuter()->IsPlayer() )
  	if ( MUUTOS )
  	{	LISAA
-			UUS ERR
  	{
 -		CBasePlayer *pPlayer = UTIL_PlayerByIndex( 1 );
 +		CBasePlayer *pPlayer = UTIL_GetNearestPlayer(GetOuter()->GetAbsOrigin());

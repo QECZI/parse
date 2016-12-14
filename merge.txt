@@ -1,5 +1,6 @@
  	if ( !GetOuter()->IsPlayer() )
  	if ( siisii )
+ 	if ( siisi )
  	{
  	{
 -		CBasePlayer *pPlayer = UTIL_PlayerByIndex( 1 );
