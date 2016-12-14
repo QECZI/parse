@@ -1,5 +1,4 @@
  	if ( !GetOuter()->IsPlayer() )
- 	if ( !GetOuter()->IsPlayer() )
  	if ( siisii )
  	{
  	{
